@@ -1,0 +1,45 @@
+    1  clear
+    2  sudo groupadd students
+    3  sudo useradd -m -u 1234 -g students user1
+    4  sudo passwd user1
+    5  sudo chage -M 90 user1
+    6  id user1
+    7  sudo chage -l user1
+    8  sudo find / -type f -perm -4000
+    9  passwd
+   10  history -n
+   11  sudo find / -type f -perm -4000 > ~/find.out
+   12  sudo cp /usr/bin/cat /home/user1/cat
+   13  sudo chmod 4755 /home/user1/cat
+   14  sudo ls -l /home/user1/cat
+   15  su - user1
+   16  sudo cp /usr/bin/chown /home/user1/chown
+   17  sudo setcap cap_chown+ep /home/user1/chown
+   18  sudo getcap /home/user1/chown
+   19  sudo touch /home/user1/test-dz
+   20  sudo ls -l /home/user1/test-dz
+   21  su - user1
+   22  command -v date
+   23  sudo -l -U user1
+   24  sudo visudo -f /etc/sudoers.d/user1-time
+   25  sudo chmod 0440 /etc/sudoers.d/user1-time
+   26  sudo visudo -c
+   27  sudo -l -U user1
+   28  su - user1
+   29  echo 684782
+   30  stat /home/user1 > ~/stat.out
+   31  sudo stat /home/user1/cat >> ~/stat.out
+   32  sudo stat /home/user1/chown >> ~/stat.out
+   33  sudo getcap /home/user1/chown > ~/getcap.out
+   34  history > ~/history.out
+    1  cat /etc/shadow
+    2  ./cat /etc/shadow > /dev/null
+    3  echo $?
+    4  exit
+    5  chown user1 test-dz
+    6  ./chown user1 test-dz
+    7  ls -l test-dz
+    8  exit
+    9  date -s now
+   10  sudo /usr/bin/date -s now
+   11  history > ~/history-user1.out
