@@ -43,3 +43,5 @@
     9  date -s now
    10  sudo /usr/bin/date -s now
    11  history > ~/history-user1.out
+ps -C passwd -o pid,ruid,euid,comm
+ps -C passwd -o pid,ruid,euid,comm > ~/ps.out
